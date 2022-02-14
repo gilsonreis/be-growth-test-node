@@ -1,8 +1,5 @@
-import User from '@models/User'
-
 test('it should be ok', () => {
-  const user = new User()
-  user.name = 'Gilson'
+  const user = 'Gilson'
 
-  expect(user.name).toEqual('Gilson')
+  expect(user).toEqual('Gilson')
 })

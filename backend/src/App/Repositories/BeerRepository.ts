@@ -8,6 +8,10 @@ class BeerRepository extends Repository<BeerEntity> {
     const query = this.createQueryBuilder('b')
     return query.paginate()
   }
+  
+  public getBeerByTemp(temp: number) {
+    
+  }
 }
 
 export default BeerRepository
