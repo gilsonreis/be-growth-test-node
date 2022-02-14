@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  web:
+    image: node:14.17.5
+    container_name: ${PROJECT_NAME}_api
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - ${PROJECT_NAME}-network
+    links:
+      - db
+    ports:
+      - '${PORT}:${PORT}'
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: 'yarn dev'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+  db:
+    image: postgres:13.4
+    container_name: ${PROJECT_NAME}_db
+    environment:
+      POSTGRES_PASSWORD: dev123
+      POSTGRES_USER: postgres
+      PGDATA: /tmp
+    ports:
+      - "54320:5432"
+    volumes:
+      - $HOME/Data/postgres:/var/lib/postgresql/data
+    networks:
+      - ${PROJECT_NAME}-network
+
+
+networks:
+  begrowth-network:
+    driver: bridge

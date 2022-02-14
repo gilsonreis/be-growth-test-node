@@ -1,15 +1,15 @@
 import {
-    BeforeInsert,
-    BeforeUpdate,
-    Column,
-    CreateDateColumn,
-    Entity,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
-} from "typeorm";
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from 'typeorm'
 
-@Entity()
-export class BeerEntity {
+@Entity('beer')
+export default class BeerEntity {
     @PrimaryGeneratedColumn('uuid')
     public id: string;
 
@@ -30,11 +30,11 @@ export class BeerEntity {
 
     @BeforeInsert()
     public createdAt () {
-        this.created_at = new Date()
+      this.created_at = new Date()
     }
 
     @BeforeUpdate()
     public updatedAt () {
-        this.updated_at = new Date()
+      this.updated_at = new Date()
     }
 }

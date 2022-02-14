@@ -1,0 +1,19 @@
+{
+  "name": "default",
+  "type": "postgres",
+  "host": "db",
+  "port": 5432,
+  "username": "postgres",
+  "password": "dev123",
+  "database": "begrowth_beer_dev",
+  "logging": true,
+  "entities": [
+    "src/App/Models/*.ts"
+  ],
+  "migrations": [
+    "src/Database/Migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "src/Database/Migrations"
+  }
+}
