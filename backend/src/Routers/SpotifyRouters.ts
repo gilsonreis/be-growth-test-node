@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import SpotifyController from '@controllers/SpotifyController';
+import SpotifyController from '@controllers/SpotifyController'
 
 const SpotifyRouter:Router = Router()
 
