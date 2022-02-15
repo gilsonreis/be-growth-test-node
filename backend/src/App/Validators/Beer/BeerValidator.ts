@@ -7,17 +7,9 @@ Yup.setLocale(pt)
 export default async (request: Request, response: Response, next: NextFunction) => {
   try {
     const schema = Yup.object().shape({
-      nome: Yup.string().required().trim(),
-      password: Yup.string().trim().test(
-        'empty-or-6-characters-check',
-        'Senha precisa ter pelo menos 6 caracteres',
-        password => !password || password.length >= 6
-      ),
-      password_check: Yup.string()
-        .oneOf([Yup.ref('password'), null], 'Senhas precisam ser iguais'),
-      cargo: Yup.string().trim(),
-      perfil: Yup.string().required().uuid().trim(),
-      status: Yup.string().trim()
+      beer_type: Yup.string().min(4).required().trim(),
+      min_temp: Yup.number().required(),
+      max_temp: Yup.number().required()
     })
 
     await schema.validate(request.body, { abortEarly: false })
