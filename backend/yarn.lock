@@ -1796,6 +1796,13 @@
   "resolved" "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   "version" "2.1.2"
 
+"axios@^0.26.0":
+  "integrity" "sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.26.0.tgz"
+  "version" "0.26.0"
+  dependencies:
+    "follow-redirects" "^1.14.8"
+
 "babel-jest@^27.1.0", "babel-jest@>=27.0.0 <28":
   "integrity" "sha512-6NrdqzaYemALGCuR97QkC/FkFIEBWP5pw5TMJoUHZTVXyOgocujp6A0JE2V6gE0HtqAAv6VKU/nI+OCR1Z4gHA=="
   "resolved" "https://registry.npmjs.org/babel-jest/-/babel-jest-27.1.0.tgz"
@@ -3233,6 +3240,11 @@
   "integrity" "sha512-JaTY/wtrcSyvXJl4IMFHPKyFur1sE9AUqc0QnhOaJ0CxHtAoIV8pYDzeEfAaNEtGkOfq4gr3LBFmdXW5mOQFnA=="
   "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.2.2.tgz"
   "version" "3.2.2"
+
+"follow-redirects@^1.14.8":
+  "integrity" "sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.8.tgz"
+  "version" "1.14.8"
 
 "for-in@^1.0.2":
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="
