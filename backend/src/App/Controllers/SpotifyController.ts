@@ -29,19 +29,32 @@ class SpotifyController {
     const spotifyService = new SpotifyService()
 
     const cred = await spotifyService.getCredencial()
-    console.log(cred)
     spotifyService.setAccessToken(cred)
     const playlists = await spotifyService.getPlayListsByName(beer_type)
 
-    const tracks = []
+    const pl_listagem = {
+      beerStyle: beer_type,
+      playlists: []
+    }
+
+    let i = 0
     for (const playlist of playlists.playlists.items) {
-      const track = await spotifyService.getTracksFromPlaylist(playlist.id)
-      tracks.push(track)
+      const tracks = await spotifyService.getTracksFromPlaylist(playlist.id)
+
+      pl_listagem.playlists.push({
+        name: playlist.name,
+        tracks: tracks
+      })
+
+      i++
+      if (i >= 3) {
+        break
+      }
     }
 
     return response.status(200).json({
       status: 'success',
-      data: tracks
+      data: pl_listagem
     })
   }
 }

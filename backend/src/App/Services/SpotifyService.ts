@@ -41,14 +41,25 @@ class SpotifyService {
         Authorization: `Bearer ${this.access_token}`
       }
     })
-    const tracks = result.data.items
+    const tracks = result.data?.items
     return SpotifyService.organizeTracks(tracks)
   }
 
   private static organizeTracks (tracks) {
     const tracks_list = []
+    let i = 0
     for (const track of tracks) {
-      tracks_list.push(track?.track?.album?.name)
+      const item = {
+        name: track?.track?.album?.name,
+        artist: track?.track?.artists[0]?.name,
+        link: track?.track?.artists[0]?.external_urls.spotify ?? ''
+      }
+      tracks_list.push(item)
+      i++
+
+      if (i >= 3) {
+        break
+      }
     }
     return tracks_list
   }
