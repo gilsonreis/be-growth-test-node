@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "80a3353f-34a7-4f68-9b6c-7d2354a29bb6",
+		"name": "BeerGrowth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Beer",
+			"item": [
+				{
+					"name": "Listar Todas Cervejas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/beer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"beer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastar Nova Cerveja",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Alterando uma Cerveja",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"beer_type\": \"Stout teste\",\n    \"min_temp\": 5,\n    \"max_temp\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/beer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"beer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Visualizando uma Cerveja",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando uma Cerveja",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Playlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"temp\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/spotify/get-playlist",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"spotify",
+								"get-playlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
