@@ -1,1 +1,2 @@
-# be-growth-test-node
+# BeGrowth - Teste NodeJS
+
